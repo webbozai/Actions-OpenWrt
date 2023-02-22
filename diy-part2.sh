@@ -12,3 +12,9 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+# 修改 Compiled
+sed -i "/echo \"DISTRIB_REVISION/{s/'\"/Compiled By BoZai'\"/g}" package/lean/default-settings/files/zzz-default-settings
+# 修改 IP
+sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
+# 修改 主题
+sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' feeds/luci/collections/luci/Makefile
